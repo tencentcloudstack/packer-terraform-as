@@ -1,0 +1,42 @@
+{
+  "variables": {
+    "secret_id": "{{env `TENCENTCLOUD_SECRET_ID`}}",
+    "secret_key": "{{env `TENCENTCLOUD_SECRET_KEY`}}",
+    "version": "{{env `RELEASE_VERSION`}}"
+  },
+  "builders": [
+    {
+      "type": "tencentcloud-cvm",
+      "secret_id": "{{user `secret_id`}}",
+      "secret_key": "{{user `secret_key`}}",
+      "region": "ap-guangzhou",
+      "zone": "ap-guangzhou-6",
+      "instance_type": "SA3.MEDIUM2",
+      "source_image_id": "img-9xqekomx",
+      "ssh_username": "root",
+      "image_name": "Packer-terraform-as-{{user `version`}}",
+      "disk_type": "CLOUD_PREMIUM",
+      "packer_debug": true,
+      "associate_public_ip_address": true,
+      "run_tags": {
+        "packer": "packer+terraform+as"
+      }
+    }
+  ],
+  "provisioners": [{
+    "type": "shell",
+    "inline": [
+      "yum install nginx -y",
+      "cd /etc/nginx",
+      "nginx",
+      "cd ~",
+      "mkdir release—version",
+      "cd release—version",
+      "wget https://github.com/gitmkn/packer_terraform_as/archive/refs/tags/v1.0.3.tar.gz",
+      "tar -zxvf v1.0.3.tar.gz",
+      "sudo cp packer_terraform_as-1.0.3/business/* /usr/share/nginx/html/",
+      "nginx -s reload",
+      "sudo systemctl enable nginx"
+    ]
+  }]
+}
