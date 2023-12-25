@@ -1,9 +1,6 @@
 name: Build and deploy app
 
 on:
-  pull_request:
-    branches:
-      - main
   release:
     types: [published]
 
