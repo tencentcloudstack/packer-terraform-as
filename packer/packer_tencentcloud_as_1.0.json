@@ -32,9 +32,9 @@
       "cd ~",
       "mkdir release—version",
       "cd release—version",
-      "wget https://github.com/gitmkn/packer_terraform_as/archive/refs/tags/v1.0.3.tar.gz",
-      "tar -zxvf v1.0.3.tar.gz",
-      "sudo cp packer_terraform_as-1.0.3/business/* /usr/share/nginx/html/",
+      "wget https://github.com/tencentcloudstack/packer-terraform-as/archive/refs/tags/{{user `version`}}.tar.gz",
+      "tar -zxvf {{user `version`}}.tar.gz",
+      "sudo cp packer-terraform-as-{{user `version`}}/service/* /usr/share/nginx/html/",
       "nginx -s reload",
       "sudo systemctl enable nginx"
     ]

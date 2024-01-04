@@ -23,8 +23,8 @@
 # 目录结构
 ```
 ├── packer                  # packer build配置文件
-│   └── packer_tencentcloud_cvm_jenkins_1.0.json
-├── business                # 业务应用代码
+│   └── packer_tencentcloud_as_1.0.json
+├── service                # 业务应用代码
 │   ├── 2048.css
 │   ├── index.html
 │   ├── jquery.min.js
