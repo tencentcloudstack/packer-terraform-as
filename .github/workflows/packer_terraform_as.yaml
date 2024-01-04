@@ -51,7 +51,7 @@ jobs:
 
       - name: Build image
         run: |
-          packer build packer/packer_tencentcloud_cvm_jenkins_1.0.json
+          packer build packer/packer_tencentcloud_as_1.0.json
 
   deploy:
     runs-on: ubuntu-latest
