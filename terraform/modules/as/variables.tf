@@ -47,8 +47,8 @@ variable "is_delete_with_instance" {
 
 variable "internet_max_bandwidth_out" {
   type        = number
-  default     = 10
-  description = "Max bandwidth of Internet access in Mbps. Default is `10`."
+  default     = 0
+  description = "Max bandwidth of Internet access in Mbps. Default is `0`."
 }
 
 variable "public_ip_assigned" {

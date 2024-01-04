@@ -6,5 +6,5 @@ variable "region" {
 }
 
 variable "availability_zone" {
-  default = "ap-guangzhou-3"
+  default = "ap-guangzhou-6"
 }
