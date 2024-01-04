@@ -13,7 +13,7 @@ resource "tencentcloud_as_scaling_config" "launch_configuration" {
   }
 
   internet_charge_type       = "TRAFFIC_POSTPAID_BY_HOUR"
-  internet_max_bandwidth_out = var.internet_max_bandwidth_out
+#  internet_max_bandwidth_out = var.internet_max_bandwidth_out
   public_ip_assigned         = var.public_ip_assigned
   password                   = var.password
   enhanced_security_service  = var.enhanced_security_service
